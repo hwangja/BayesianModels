@@ -1,6 +1,9 @@
 import numpy as np
 import math
-import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pylab as plt
+# import matplotlib.pyplot as plt
 
 t = np.arange(0, 20, 0.1)
 d = []
