@@ -6,8 +6,10 @@ def polymultrunc(p0, p1, m):
     p_new = p_new[:m]
     return p_new
 
-p0 = [1,2,3]
-p1 = [3,2,1]
-p_new = polymultrunc(p0, p1, 3)
+if __name__ == "__main__":
 
-print p_new 
+    p0 = [1,2,3]
+    p1 = [3,2,1]
+    p_new = polymultrunc(p0, p1, 1)
+    
+    print p_new 
