@@ -3,7 +3,7 @@ from numpy.polynomial import polynomial as P
 
 def polynomial_truncated_multiplication(polynomial_0, polynomial_1, term_count):
     updated_polynomial = P.polymul(polynomial_0, polynomial_1)
-    updated_polynomial = updated_polynomial[:term_count]
+    updated_polynomial = updated_polynomial[:term_count + 1]
     return updated_polynomial
 
 def makeJ(j, m):
