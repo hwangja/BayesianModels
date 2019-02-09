@@ -3,7 +3,7 @@ from numpy.polynomial import polynomial as P
 
 def polymultrunc(p0, p1, m):
     p_new = P.polymul(p0, p1)
-    p_new = p_new[:m]
+    p_new = p_new[:m+1]
     return p_new
 
 if __name__ == "__main__":
