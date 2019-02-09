@@ -9,7 +9,7 @@ def polynomial_truncated_multiplication(polynomial_0, polynomial_1, term_count):
 def makeJ(j, m):
     return np.power(j,range(m+1))
 
-def makeU(c, m):
+def generate_u_constants(c, m):
     U = makeJ(2, m)
     for i in range(c+1)[3:]:
         U = U
@@ -18,5 +18,5 @@ def makeU(c, m):
 
 if __name__ == "__main__":
         
-    U = makeU(3, 3)
+    U = generate_u_constants(3, 3)
     print(U)

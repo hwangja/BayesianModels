@@ -1,5 +1,5 @@
 import unittest
-from ugen import generate_constant, poly_mult_trunc
+from ugen import polynomial_truncated_multiplication, generate_u_constants, makeJ
 
 class UGenTestCase(unittest.TestCase):
     """ Testing U Constant Generator functions """
@@ -7,30 +7,28 @@ class UGenTestCase(unittest.TestCase):
     # Poly Mult Trunc Unit Test
     
     # Generate Constant
-    def test_generate_constant_zero_base_case(self):
-        # self.assertEquals(1, generate_constant(0, 0))
-        self.assertFalse(generate_constant(0, 0))
+    def test_generate_u_constants_zero_base_case(self):
+        self.assertEquals({1}, generate_u_constants(0, 0))
 
-    def test_generate_constant_one_base_case(self):
+    def test_generate_u_constants_one_base_case(self):
         m = 2
         c = 2
         summation = 0
         for j in range(2, c):
             summation += j
-        self.assertFalse(generate_constant(0, 0))
-        # self.assertEquals(summation, generate_constant(m, c))
+        self.assertEquals(summation, generate_u_constants(m, c))
 
-    def test_generate_constant_negative_terms(self):
+    def test_generate_u_constants_negative_terms(self):
         """ Exception management??"""    
 
-    def test_generate_constant(self):
+    def test_generate_u_constants(self):
         """ """
         m = 2
         c = 5
         expected_result = {1, 14}
-        self.assertEquals(expected_result, generate_constant(m, c))
+        self.assertEquals(expected_result, generate_u_constants(m, c))
 
-    def test_generate_constant_consistency_check(self):
+    def test_generate_u_constants_consistency_check(self):
         """ """
 
 if __name__ == '__main__':
