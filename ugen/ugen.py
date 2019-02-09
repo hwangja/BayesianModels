@@ -2,6 +2,18 @@ import numpy as np
 from numpy.polynomial import polynomial as P
 
 def polynomial_truncated_multiplication(polynomial_0, polynomial_1, term_count):
+    '''
+    multiply two polynomails and truncated the output to desired size
+    
+    inputs
+    polynomial_0: the original polynomial, stored as numpy array
+    polynomial_1: the polynomia to be mergedl, stored as numpy array
+    term_count: number of output polynomial terms excluding the constant
+    
+    returns
+    updated polynomial
+    
+'''
     updated_polynomial = P.polymul(polynomial_0, polynomial_1)
     updated_polynomial = updated_polynomial[:term_count + 1]
     return updated_polynomial
