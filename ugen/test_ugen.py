@@ -1,4 +1,5 @@
 import unittest
+import numpy
 from ugen import polynomial_truncated_multiplication, generate_u_constants, makeJ
 
 class UGenTestCase(unittest.TestCase):
@@ -8,7 +9,9 @@ class UGenTestCase(unittest.TestCase):
     
     # Generate Constant
     def test_generate_u_constants_zero_base_case(self):
-        self.assertEquals({1}, generate_u_constants(0, 0))
+        constants_array = generate_u_constants(0,0)
+        self.assertEquals(1, len(constants_array))
+        self.assertEquals(1, constants_array[0])
 
     def test_generate_u_constants_one_base_case(self):
         m = 2
