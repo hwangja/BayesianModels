@@ -13,7 +13,7 @@ def generate_a(H):
     A = [1]
     for j, h in enumerate(H):
         for i in range(h):
-            A = P.polymul(A, [1,j])
+            A = P.polymul(A, [j,1])
     return A
 
 #testing    
