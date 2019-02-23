@@ -16,27 +16,33 @@ class UGenTestCase(unittest.TestCase):
     def test_generate_u_constants_one_base_case(self):
         m = 2
         c = 2
-        expected = {1, 2, 4};
-        results = generate_u_constants(m, c);
+        expected = [1, 2, 4];
+        results = generate_u_constants(c, m);
         for i,j in zip(expected, results):
             self.assertEqual(i, j)
 
+    @unittest.skip("code not yet performing correctly with negative 'c'")
     def test_generate_u_constants_negative_terms(self):
-        """ Exception management??"""    
-
+       """ Exception management??"""    
+ 
     def test_generate_u_constants(self):
         """ """
         m = 2
-        c = 5
-        expected_result = {1, 14}
-        print("in actual test")
-        for i in generate_u_constants(m, c):
-            print(i)
-        print("out of actual test")
- #       self.assertEquals(expected_result, generate_u_constants(m, c))
+        c = 3
+        expected = [1, 5, 19]
+        results = generate_u_constants(c, m);
+        for i,j in zip(expected, results):
+            self.assertEqual(i, j)
+ 
 
     def test_generate_u_constants_consistency_check(self):
         """ """
+        m = 5
+        c = 10
+        expected = [1, 54, 1650, 37620, 713427, 11909898]
+        result =  generate_u_constants(c, m)
+        for i,j in zip(expected, result):
+            self.assertEquals(i, j)
 
 if __name__ == '__main__':
     unittest.main() 
